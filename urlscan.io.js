@@ -37,19 +37,19 @@ class urlScan{
             url: searchTerm,
             Public: null
         }
-        this._req("scan/",{
+        return this._req("scan/",{
             method: "POST"
         }).then(() =>{
             delete temp.reqOptions.form
         })
     }
     async search(searchTerm){
-        this._req(`search/?q=domain:${searchTerm}`,{
+        return this._req(`search/?q=domain:${searchTerm}`,{
             method: "GET"
         })
     }
     async result(uuid){
-        this._req(`result/${uuid}`,{
+        return this._req(`result/${uuid}`,{
             method: "GET"
         })
     }
