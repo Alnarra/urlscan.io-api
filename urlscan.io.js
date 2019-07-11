@@ -39,8 +39,9 @@ class urlScan{
         }
         return this._req("scan/",{
             method: "POST"
-        }).then(() =>{
+        }).then((response) =>{
             delete temp.reqOptions.form
+            return response
         })
     }
     async search(searchTerm){
