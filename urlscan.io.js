@@ -27,8 +27,6 @@ class urlScan{
         return new Promise((resolve, reject) => {
             request(options,(err, res, body) => {
                 err ? reject(err) : ""
-                console.log(res)
-                console.log(body)
                 res.statusCode == 200 ?  resolve(body) : reject(`Server response was ${res.statusCode}`)
             })
         })
